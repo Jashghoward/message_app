@@ -8,10 +8,10 @@ const chatMessages = document.getElementById('chat-messages');
 const loggedInUsername = "Alice"; // Replace with the actual username
 
 socket.on('message', (data) => {
-
-  
   // Parse the data received from the server
   const { sender, message } = JSON.parse(data);
+
+  
 
   // Create a new message element
   const messageElement = document.createElement('div');

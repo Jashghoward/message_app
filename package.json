@@ -1,0 +1,18 @@
+{
+  "name": "message_app",
+  "version": "1.0.0",
+  "description": "JavaScript message application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "knex": "^3.0.1",
+    "node-dependency-injection-express-middleware": "^1.2.2",
+    "pg": "^8.11.3",
+    "socket.io": "^4.7.2"
+  }
+}

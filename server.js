@@ -96,6 +96,19 @@ server.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
 
+// Server-side authentication logic (replace with your own)
+app.post('/authenticate', (req, res) => {
+  const { username, password } = req.body;
+
+  // Check if the provided username and password match the expected credentials
+  if (username === 'your_username' && password === 'your_password') {
+      // Authentication successful
+      res.json({ success: true });
+  } else {
+      // Authentication failed
+      res.status(401).json({ success: false, message: 'Invalid username or password' });
+  }
+});
 
 
 

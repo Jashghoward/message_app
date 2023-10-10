@@ -14,6 +14,8 @@ socket.on('message', (data) => {
   // Create a new message element
   const messageElement = document.createElement('div');
 
+  
+
   // Display the sender's name above the message
   const senderElement = document.createElement('strong');
   senderElement.textContent = sender + ': ';

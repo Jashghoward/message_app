@@ -1,30 +1,132 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
 const http = require('http');
 const socketIo = require('socket.io');
+const { Client } = require('pg'); // Import the pg library
 
-const app = express();
+const port = 3001; // Use the correct port number
+
+// Serve your static files (HTML, CSS, JS, etc.) using Express
+app.use(express.static(__dirname + '/public'));
+
+// Middleware to parse JSON data
+app.use(bodyParser.json());
+
+// Configure your database connection
+const dbConfig = {
+    user: 'joshhoward',
+    host: 'localhost',
+    database: 'chat_app_dev',
+    password: '',
+    port: 5432, // Default PostgreSQL port
+};
+
+const client = new Client(dbConfig);
+
+// Connect to the database
+client.connect()
+    .then(() => {
+        console.log('Connected to PostgreSQL database');
+        createTables(); // Create tables when the database connection is established
+    })
+    .catch((err) => {
+        console.error('Error connecting to PostgreSQL:', err);
+    });
+
+// Function to create tables
+const createTables = () => {
+    // ... (your table creation code)
+
+    client.query(createTablesQuery)
+        .then(() => {
+            console.log('Tables created successfully');
+        })
+        .catch((err) => {
+            console.error('Error creating tables:', err);
+        });
+};
+
+// Start your HTTP server for Socket.io
 const server = http.createServer(app);
 const io = socketIo(server);
 
-const port = 3001;
-
-app.use(express.static(__dirname + '/public'));
-
+// Handle Socket.io connections and chat logic here
 io.on('connection', (socket) => {
-  console.log('A user connected');
+    console.log('A user connected');
 
-  socket.on('sendMessage', (message) => {
-    io.emit('message', message);
-  });
+    // Handle new messages
+    socket.on('sendMessage', (message) => {
+        // Broadcast the message to all connected clients
+        io.emit('message', message);
+    });
 
-  socket.on('disconnect', () => {
-    console.log('A user disconnected');
-  });
+    socket.on('disconnect', () => {
+        console.log('A user disconnected');
+    });
 });
 
+// Define a route for user registration (signup)
+app.post('/signup', (req, res) => {
+    // ... (your user registration logic)
+});
+
+// Define a route for user login
+app.post('/login', (req, res) => {
+    const username = req.body.username;
+    const password = req.body.password;
+
+    // Check the username and password against your database
+    // (You should hash and salt the password for security)
+
+    // For simplicity, let's assume the login is successful
+    const isAuthenticated = true;
+
+    if (isAuthenticated) {
+        // Redirect to the message-sending page (e.g., messages.html)
+        res.redirect('/messages.html');
+    } else {
+        // If login fails, you can redirect to the login page with an error message
+        res.redirect('/login.html?error=1');
+    }
+});
+
+// Start your Express server
 server.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+    console.log(`Server is running on http://localhost:${port}`);
 });
+
+
+
+
+//  THIS VERSION WORKS!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// const express = require('express');
+// const http = require('http');
+// const socketIo = require('socket.io');
+
+// const app = express();
+// const server = http.createServer(app);
+// const io = socketIo(server);
+
+// const port = 3001;
+
+// app.use(express.static(__dirname + '/public'));
+
+// io.on('connection', (socket) => {
+//   console.log('A user connected');
+
+//   socket.on('sendMessage', (message) => {
+//     io.emit('message', message);
+//   });
+
+//   socket.on('disconnect', () => {
+//     console.log('A user disconnected');
+//   });
+// });
+
+// server.listen(port, () => {
+//   console.log(`Server is running on http://localhost:${port}`);
+// });
 
 
 

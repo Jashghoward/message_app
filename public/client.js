@@ -40,6 +40,8 @@ messageForm.addEventListener('submit', (e) => {
 });
 
 // Event listener for login form (Assuming you have a login form)
+document.addEventListener('DOMContentLoaded', function () {
+  // Your login form event listener code here
 const loginForm = document.getElementById('login-form');
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -47,6 +49,7 @@ loginForm.addEventListener('submit', (e) => {
     loggedInUsername = usernameInput.value; // Store the logged-in user's username
     loginForm.style.display = 'none'; // Hide the login form
     // Show the chat interface or do any other logic you need
+});
 });
 
 socket.on('message', (message) => {

@@ -86,9 +86,11 @@ io.on('connection', (socket) => {
     socket.on('disconnect', () => {
         console.log('A user disconnected');
 
-        
+
     });
 });
+
+
 
 // Define a route for user registration (signup)
 app.post('/signup', (req, res) => {

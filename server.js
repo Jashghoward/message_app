@@ -91,6 +91,8 @@ io.on('connection', (socket) => {
 // Define a route for user registration (signup)
 app.post('/signup', (req, res) => {
     const newUser = {
+
+      
         username: req.body.username,
         password: req.body.password, // Hash the password using bcrypt (not shown in this code)
     };

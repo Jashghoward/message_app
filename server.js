@@ -96,8 +96,6 @@ app.post('/signup', (req, res) => {
     };
 
     const insertUserQuery = {
-
-      
         text: 'INSERT INTO users(username, password) VALUES($1, $2)',
         values: [newUser.username, newUser.password],
     };

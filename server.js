@@ -82,7 +82,7 @@ io.on('connection', (socket) => {
         // Broadcast the message to all connected clients
 
 
-        
+
         io.emit('message', message);
     });
 
@@ -97,6 +97,8 @@ io.on('connection', (socket) => {
 app.post('/signup', (req, res) => {
     const newUser = {
         username: req.body.username,
+
+        
         password: req.body.password, // Hash the password using bcrypt (not shown in this code)
     };
 

@@ -80,6 +80,9 @@ io.on('connection', (socket) => {
     // Handle new messages
     socket.on('sendMessage', (message) => {
         // Broadcast the message to all connected clients
+
+
+        
         io.emit('message', message);
     });
 

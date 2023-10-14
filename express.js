@@ -10,9 +10,7 @@ app.use(express.static(__dirname + '/public'));
 
 
 app.use(bodyParser.json());
-
 // Define your routes and other middleware as needed
-
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);

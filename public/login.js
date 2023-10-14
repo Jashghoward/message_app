@@ -5,9 +5,7 @@ const passwordInput = document.getElementById('password');
 
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    
 
-    
     // Get the entered username and password
     const username = usernameInput.value;
     const password = passwordInput.value;

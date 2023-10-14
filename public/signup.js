@@ -8,6 +8,8 @@ signupForm.addEventListener('submit', (e) => {
 
     // Get the entered username and password
     const username = usernameInput.value;
+
+    
     const password = passwordInput.value;
 
     // Implement your user registration logic here (e.g., store in a database)

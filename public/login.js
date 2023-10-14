@@ -1,7 +1,5 @@
 // login.js
 const loginForm = document.getElementById('login-form');
-
-
 const usernameInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
 

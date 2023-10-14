@@ -7,6 +7,8 @@ const app = express();
 app.use(express.static(__dirname + '/public'));
 
 // Middleware to parse JSON data
+
+
 app.use(bodyParser.json());
 
 // Define your routes and other middleware as needed

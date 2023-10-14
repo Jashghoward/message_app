@@ -5,7 +5,6 @@ const app = express();
 
 // Serve your static files (HTML, CSS, JS, etc.) using Express
 app.use(express.static(__dirname + '/public'));
-
 // Middleware to parse JSON data
 
 

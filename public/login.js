@@ -8,6 +8,8 @@ loginForm.addEventListener('submit', (e) => {
 
     // Get the entered username and password
     const username = usernameInput.value;
+
+    
     const password = passwordInput.value;
 
     // Implement your authentication logic here (e.g., check username and password)

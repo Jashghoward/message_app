@@ -4,8 +4,6 @@ const usernameInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
 
 loginForm.addEventListener('submit', (e) => {
-
-
     e.preventDefault();
 
 

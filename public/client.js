@@ -26,6 +26,8 @@ socket.on('message', (data) => {
 
   // Append the message element to the chat messages container
   chatMessages.appendChild(messageElement);
+
+  
 });
 
 messageForm.addEventListener('submit', (e) => {

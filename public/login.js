@@ -13,6 +13,7 @@ loginForm.addEventListener('submit', (e) => {
     // Implement your authentication logic here (e.g., check username and password)
     if (username === 'your_username' && password === 'your_password') {
         // Authentication successful, redirect to the chat interface
+        
         window.location.href = 'index.html';
     } else {
         // Authentication failed, show an error message or handle it accordingly

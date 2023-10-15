@@ -15,6 +15,8 @@ loginForm.addEventListener('submit', (e) => {
         // Authentication successful, redirect to the chat interface
         window.location.href = 'index.html';
     } else {
+
+        
         // Authentication failed, show an error message or handle it accordingly
         alert('Authentication failed. Please check your username and password.');
     }

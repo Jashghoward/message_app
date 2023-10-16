@@ -117,8 +117,6 @@ app.post('/login', (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
 
-    
-
     // Check the username and password against your database
     // Replace this logic with actual authentication code
     // Example: Hash the password and compare it with the stored hash

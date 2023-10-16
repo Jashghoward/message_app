@@ -83,8 +83,6 @@ io.on('connection', (socket) => {
         io.emit('message', message);
     });
     socket.on('disconnect', () => {
-
-        
         console.log('A user disconnected');
     });
 });

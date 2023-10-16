@@ -96,7 +96,7 @@ app.post('/signup', (req, res) => {
 
     const insertUserQuery = {
 
-        
+
         text: 'INSERT INTO users(username, password) VALUES($1, $2)',
         values: [newUser.username, newUser.password],
     };
@@ -115,6 +115,8 @@ app.post('/signup', (req, res) => {
 // Define a route for user login
 app.post('/login', (req, res) => {
     const username = req.body.username;
+
+    
     const password = req.body.password;
 
     // Check the username and password against your database

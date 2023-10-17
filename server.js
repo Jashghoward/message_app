@@ -125,8 +125,6 @@ app.post('/login', (req, res) => {
     // For simplicity, let's assume the login is successful
     const isAuthenticated = true;
 
-
-
     if (isAuthenticated) {
         // Redirect to the message-sending page (e.g., messages.html)
         res.redirect('/messages.html');

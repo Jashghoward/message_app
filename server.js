@@ -132,6 +132,8 @@ app.post('/login', (req, res) => {
         // If login fails, you can redirect to the login page with an error message
         res.redirect('/login.html?error=1');
     }
+
+    
 });
 
 // Start your Express server

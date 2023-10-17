@@ -128,8 +128,6 @@ app.post('/login', (req, res) => {
 
 
     if (isAuthenticated) {
-
-        
         // Redirect to the message-sending page (e.g., messages.html)
         res.redirect('/messages.html');
     } else {

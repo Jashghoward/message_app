@@ -114,11 +114,7 @@ app.post('/signup', (req, res) => {
 
 // Define a route for user login
 app.post('/login', (req, res) => {
-
-
     const username = req.body.username;
-
-    
     const password = req.body.password;
 
     // Check the username and password against your database

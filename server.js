@@ -123,8 +123,6 @@ app.post('/login', (req, res) => {
     // Example: Fetch user from the database by username and compare hashes
 
     // For simplicity, let's assume the login is successful
-
-    
     const isAuthenticated = true;
 
     if (isAuthenticated) {

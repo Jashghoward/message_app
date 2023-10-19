@@ -1,6 +1,8 @@
 // signup.js
 const signupForm = document.getElementById('signup-form');
 const usernameInput = document.getElementById('username');
+
+
 const passwordInput = document.getElementById('password');
 
 signupForm.addEventListener('submit', (e) => {
@@ -8,7 +10,7 @@ signupForm.addEventListener('submit', (e) => {
 
     // Get the entered username and password
 
-    
+
     const username = usernameInput.value;
     const password = passwordInput.value;
 

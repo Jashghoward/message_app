@@ -1,5 +1,7 @@
 // signup.js
 const signupForm = document.getElementById('signup-form');
+
+
 const usernameInput = document.getElementById('username');
 
 

@@ -3,6 +3,8 @@ const signupForm = document.getElementById('signup-form');
 const usernameInput = document.getElementById('username');
 
 
+
+
 const passwordInput = document.getElementById('password');
 
 

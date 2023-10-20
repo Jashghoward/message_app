@@ -8,6 +8,8 @@ const passwordInput = document.getElementById('password');
 
 
 signupForm.addEventListener('submit', (e) => {
+
+    
     e.preventDefault();
 
     // Get the entered username and password
